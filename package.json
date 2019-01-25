@@ -1,0 +1,62 @@
+{
+    "name": "snippet-collector",
+    "version": "1.0.0",
+    "description": "Collect snippets from your sources and tests for embedding in your docs",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "format": "prettier --write \"src/**/*.ts\""
+    },
+    "files": [
+        "./lib"
+    ],
+    "bin": {
+        "snippet-collector": "./lib/cli.js"
+    },
+    "keywords": [
+        "snippets"
+    ],
+    "author": "Lorefnon <lorefnon@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "fs-extra": "^7.0.1",
+        "glob": "^7.1.3",
+        "minimist": "^1.2.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^5.0.4",
+        "@types/glob": "^7.1.1",
+        "@types/jest": "^23.3.13",
+        "@types/minimist": "^1.2.0",
+        "jest": "^24.0.0",
+        "ts-jest": "^23.10.5",
+        "typescript": "^3.2.4"
+    },
+    "jest": {
+        "transform": {
+            ".(ts|tsx)": "ts-jest"
+        },
+        "testEnvironment": "node",
+        "testRegex": "\\.spec\\.ts$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/test/"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 95,
+                "lines": 95,
+                "statements": 95
+            }
+        },
+        "collectCoverage": false
+    }
+}

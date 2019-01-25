@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collectSnippetsFromFile 1`] = `
+Map {
+  "usages" => Array [
+    Object {
+      "content": "import minimist from \\"minimist\\";
+",
+      "endLineNo": 3,
+      "name": "usages",
+      "occuranceIndex": 0,
+      "startLineNo": 1,
+    },
+    Object {
+      "content": "const extractedOptions = minimist(process.argv.slice(1), {
+    aliases: {
+        'o': 'options'
+    }
+})
+",
+      "endLineNo": 14,
+      "name": "usages",
+      "occuranceIndex": 1,
+      "startLineNo": 8,
+    },
+  ],
+  "simple-usage" => Array [
+    Object {
+      "content": "import minimist from \\"minimist\\";
+
+const options = minimist(process.argv.slice(1));
+",
+      "endLineNo": 6,
+      "name": "simple-usage",
+      "occuranceIndex": 0,
+      "startLineNo": 1,
+    },
+  ],
+}
+`;
+
+exports[`collectSnippetsFromFile 2`] = `
+Object {
+  "simple-usage": Object {
+    "content": "import minimist from \\"minimist\\";
+
+const options = minimist(process.argv.slice(1));
+",
+    "name": "simple-usage",
+  },
+  "usages": Object {
+    "content": "import minimist from \\"minimist\\";
+const extractedOptions = minimist(process.argv.slice(1), {
+    aliases: {
+        'o': 'options'
+    }
+})
+",
+    "name": "usages",
+  },
+}
+`;
