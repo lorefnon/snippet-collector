@@ -97,7 +97,7 @@ export const collectSnippetsFromSource = (
             }
         }
         activeSnippets.forEach(snippet => {
-            snippet.content += line;
+            snippet.content += line + "\n";
         });
     });
     if (activeSnippets.length !== 0) {
