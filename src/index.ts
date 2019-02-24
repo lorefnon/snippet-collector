@@ -153,7 +153,7 @@ export const collectSnippets = async (options: { globPatterns: string | string[]
 };
 
 export const processSnippets = async (options: { globPatterns: string | string[]; outputFile?: string }) => { 
-    const consolidated = collectSnippets(options);
+    const consolidated = await collectSnippets(options);
     if (options.outputFile) {
         fs.writeFileSync(path.resolve(options.outputFile), JSON.stringify(consolidated, null, 4));
     } else {

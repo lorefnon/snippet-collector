@@ -1,6 +1,6 @@
 {
     "name": "snippet-collector",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Collect snippets from your sources and tests for embedding in your docs",
     "main": "index.js",
     "scripts": {
@@ -10,7 +10,7 @@
         "format": "prettier --write \"src/**/*.ts\""
     },
     "files": [
-        "./lib"
+        "/lib"
     ],
     "bin": {
         "snippet-collector": "./lib/cli.js"
