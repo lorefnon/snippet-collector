@@ -1,6 +1,7 @@
 # About
 
-snippet-collector is a simple utility that lets you extract out example snippets from your source and test files, so that they can be reused in your docs. That way your docs never go out of sync with the source and you can ensure that your examples are covered by your test suite.
+snippet-collector is a simple utility that lets you extract out example snippets from your source and test files, so that they can be reused in your docs.
+That way, your docs never go out of sync with the source and you can ensure that your examples are covered by your test suite.
 
 # Installation
 
@@ -10,9 +11,9 @@ Ensure node and npm are [installed](https://nodejs.org/en/download/). Only lates
 
 ```bash
 npm install --save-dev snippet-collector
-```
+/```
 
-Add a script entry in package.json: 
+Add a script entry in package.json:
 
 ```json
 {
@@ -28,7 +29,7 @@ Add a script entry in package.json:
 npm install -g snippet-collector
 ```
 
-A sudo may be required, depending on how node installation is configured. 
+A sudo may be required, depending on how node installation is configured.
 
 # Usage
 
@@ -48,7 +49,7 @@ It is possible to have composite snippets spread across multiple-files - They wi
 ```js
 // @snippet:start usage:0
 import Foo from "foo-lib"
-// @snippet:end 
+// @snippet:end
 
 // @snippet:start usage:1
 const foo = Foo();
@@ -64,7 +65,7 @@ The order indices must start from 0 and must be contiguous. Otherwise, an error 
 snippet-collector --files ./src/**/*.js --output ./generated/snippets.json
 ```
 
-Your documentation generator can use the extracted json. The structure of json looks like this: 
+Your documentation generator can use the extracted json. The structure of json looks like this:
 
 ```json
 {
@@ -74,11 +75,11 @@ Your documentation generator can use the extracted json. The structure of json l
     }
 }
 ```
-Entries are keyed by snippet name and have a content property containing the combined snippet text. 
+Entries are keyed by snippet name and have a content property containing the combined snippet text.
 
 ## As Node library
 
-It is also possible to use snippet-collector as a node library: 
+It is also possible to use snippet-collector as a node library:
 
 ```js
 const {processSnippets} = require('snippet-collector');
@@ -89,7 +90,7 @@ processSnippets({
 });
 ```
 
-Or alternatively, you can skip the generation and just get the extracted collection of snippets: 
+Or alternatively, you can skip the generation and just get the extracted collection of snippets:
 
 ```js
 const {collectSnippets} = require('snippet-collector');
@@ -107,6 +108,6 @@ This returns a promise that resolves to a javascript object of same structure as
 
 Suggestions, bug reports as well as PRs are welcome. However, it is advisable that any suggestion that significantly alters the scope of the project be discussed first.
 
-# License 
+# License
 
 MIT

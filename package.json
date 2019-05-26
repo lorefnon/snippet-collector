@@ -1,6 +1,6 @@
 {
     "name": "snippet-collector",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Collect snippets from your sources and tests for embedding in your docs",
     "main": "index.js",
     "scripts": {
