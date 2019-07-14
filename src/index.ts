@@ -141,10 +141,16 @@ export const consolidateSnippets = (snippets: Map<string, SnippetOccurance[]>): 
     }, {} as {[name: string]: Snippet});
 };
 
+export const unquote = (str: string) => {
+    if (str.charAt(0) !== str.charAt(str.length-1)) return str;
+    if (str.charAt(0) === '"' || str.charAt(0) === "'") return str.slice(1, -1);
+    return str;
+};
+
 export const collectSnippets = async (options: { globPatterns: string | string[] }) => {
     const snippets = new Map();
     for (const globPattern of ([] as string[]).concat(options.globPatterns)) {
-        const filePaths = await globP(globPattern);
+        const filePaths = await globP(unquote(globPattern));
         for (const filePath of filePaths) {
             await collectSnippetsFromFile(filePath, snippets);
         }
@@ -152,7 +158,7 @@ export const collectSnippets = async (options: { globPatterns: string | string[]
     return consolidateSnippets(snippets);
 };
 
-export const processSnippets = async (options: { globPatterns: string | string[]; outputFile?: string }) => { 
+export const processSnippets = async (options: { globPatterns: string | string[]; outputFile?: string }) => {
     const consolidated = await collectSnippets(options);
     if (options.outputFile) {
         fs.writeFileSync(path.resolve(options.outputFile), JSON.stringify(consolidated, null, 4));
