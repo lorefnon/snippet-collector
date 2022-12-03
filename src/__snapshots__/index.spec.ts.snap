@@ -2,16 +2,16 @@
 
 exports[`collectSnippetsFromFile 1`] = `
 Map {
-  "usages" => Array [
-    Object {
-      "content": "import minimist from \\"minimist\\";
+  "usages" => [
+    {
+      "content": "import minimist from "minimist";
 ",
       "endLineNo": 3,
       "name": "usages",
       "occuranceIndex": 0,
       "startLineNo": 1,
     },
-    Object {
+    {
       "content": "const extractedOptions = minimist(process.argv.slice(1), {
     aliases: {
         'o': 'options'
@@ -24,9 +24,9 @@ Map {
       "startLineNo": 8,
     },
   ],
-  "simple-usage" => Array [
-    Object {
-      "content": "import minimist from \\"minimist\\";
+  "simple-usage" => [
+    {
+      "content": "import minimist from "minimist";
 
 const options = minimist(process.argv.slice(1));
 ",
@@ -40,16 +40,16 @@ const options = minimist(process.argv.slice(1));
 `;
 
 exports[`collectSnippetsFromFile 2`] = `
-Object {
-  "simple-usage": Object {
-    "content": "import minimist from \\"minimist\\";
+{
+  "simple-usage": {
+    "content": "import minimist from "minimist";
 
 const options = minimist(process.argv.slice(1));
 ",
     "name": "simple-usage",
   },
-  "usages": Object {
-    "content": "import minimist from \\"minimist\\";
+  "usages": {
+    "content": "import minimist from "minimist";
 const extractedOptions = minimist(process.argv.slice(1), {
     aliases: {
         'o': 'options'
